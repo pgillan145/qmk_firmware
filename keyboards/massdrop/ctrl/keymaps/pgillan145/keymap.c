@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   KC_BTN1, _______, KC_BTN2, \
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-        _______, _______, _______, _______, _______, _______, NK_TOGG, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______,                              KC_MS_U, \
+        _______, _______, _______, _______, _______, _______, NK_TOGG, KC_MUTE, KC_VOLD, KC_VOLU, _______, KC_BTN1,                              KC_MS_U, \
         _______, _______, _______,                   _______,                            _______, _______, _______, _______,            KC_MS_L, KC_MS_D, KC_MS_R \
     )
 };
@@ -50,7 +50,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Runs just one time when the keyboard initializes.
 void matrix_init_user(void) {
     // Disable the LEDs when the keyboard boots up
-    rgb_matrix_disable_noeeprom();
+    rgb_matrix_set_flags(LED_FLAG_NONE);
+    rgb_matrix_enable_noeeprom();
+    // RGBLIGHT_MODE_STATIC_LIGHT
 };
 
 // Runs constantly in the background, in a loop.
