@@ -57,6 +57,11 @@ void matrix_init_user(void) {
     rgb_matrix_mode(1);
     // value = brightness/ hue = color / saturation = white value
     rgb_matrix_sethsv(HSV_GOLD);
+    rgb_matrix_decrease_val();
+    rgb_matrix_decrease_val();
+    rgb_matrix_decrease_val();
+    rgb_matrix_decrease_val();
+    rgb_matrix_decrease_val();
 };
 
 // Runs constantly in the background, in a loop.
