@@ -50,9 +50,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Runs just one time when the keyboard initializes.
 void matrix_init_user(void) {
     // Disable the LEDs when the keyboard boots up
-    rgb_matrix_set_flags(LED_FLAG_NONE);
-    rgb_matrix_enable_noeeprom();
-    // RGBLIGHT_MODE_STATIC_LIGHT
+    //rgb_matrix_set_flags(LED_FLAG_NONE);
+    //rgb_matrix_enable_noeeprom();
+
+    // TODO: Figure out why RGB_MODE_PLAIN doesn't work
+    rgb_matrix_mode(1);
+    // value = brightness/ hue = color / saturation = white value
+    rgb_matrix_sethsv(HSV_GOLD);
 };
 
 // Runs constantly in the background, in a loop.
